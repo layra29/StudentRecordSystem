@@ -10,6 +10,7 @@ struct Student {
     float gpa;
     std::string major;
     Student* next;
+    Student() : id(0), gpa(0.0), next(nullptr) {}
 };
 
 class StudentList {

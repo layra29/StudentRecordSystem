@@ -97,15 +97,15 @@ void StudentList::loadFromFile() {
     cout << "Data loaded from students.txt\n";
 }
 void StudentList::sortByGPA() {
-    if (!head || !head->next) return; // Nothing to sort if list is empty or has one node
+    if (!head || !head->next) return;
 
     bool swapped;
     do {
         swapped = false;
         Student* current = head;
+
         while (current->next != nullptr) {
             if (current->gpa < current->next->gpa) {
-                // Swap values (not pointers)
                 swap(current->id, current->next->id);
                 swap(current->name, current->next->name);
                 swap(current->gpa, current->next->gpa);
@@ -115,5 +115,7 @@ void StudentList::sortByGPA() {
             current = current->next;
         }
     } while (swapped);
-    cout << "Student list sorted by GPA (descending)." << endl;
+
+    cout << "Student list sorted by GPA (descending).\n";
+    displayStudents(); // <--- This is the only line to ADD
 }
