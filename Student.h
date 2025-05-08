@@ -20,6 +20,7 @@ public:
     StudentList();
     ~StudentList();
     void addStudent();
+    // Displays all student records currently stored in the linked list
     void displayStudents();
     void searchByID();
     void saveToFile();
