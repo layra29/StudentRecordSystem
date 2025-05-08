@@ -120,8 +120,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\StudentRecordproject\StudentRecordSystem\student.cpp" />
     <ClCompile Include="Mainform.cpp" />
+    <ClCompile Include="student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\StudentRecordproject\StudentRecordSystem\Student.h">

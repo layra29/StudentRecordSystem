@@ -18,7 +18,7 @@
     <ClCompile Include="Mainform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\StudentRecordproject\StudentRecordSystem\student.cpp">
+    <ClCompile Include="student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
