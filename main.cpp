@@ -8,8 +8,8 @@ int main() {
     int choice;
     do {
         cout << "\nStudent Record Management System\n";
-        cout << "1. Add Student\n";
-        cout << "2. Display Students\n";
+        cout << "1. Add Student" << endl << endl;
+        cout << "2. Display Students" << endl << endl;
         cout << "3. Search by ID\n";
         cout << "4. Save to File\n";
         cout << "5. Load from File\n";
