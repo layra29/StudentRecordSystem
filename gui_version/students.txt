@@ -1,8 +1,11 @@
-1234,hi,4.8,math
-1234,Nish,4.8,math
-234,Nishit,3,Math
-234,nish,3,Math
+5678,niraj,4,Computer
+567,Alina,3,Sociology
+123,NIsh,4,CS
 123,Nistha,4,CS
 123,Nistha ,4,CS
 123,Nistha,4,CS
-123,NIsh,4,CS
+234,nish,3,Math
+234,Nishit,3,Math
+1234,Nish,4.8,math
+1234,hi,4.8,math
+3456,nishit,4,CS
