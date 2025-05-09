@@ -26,7 +26,7 @@
     <ClInclude Include="Mainform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\StudentRecordproject\StudentRecordSystem\Student.h">
+    <ClInclude Include="..\..\..\..\..\source\repos\StudentRecordproject\StudentRecordSystem\gui_version\Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

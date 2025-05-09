@@ -124,9 +124,7 @@
     <ClCompile Include="student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\StudentRecordproject\StudentRecordSystem\Student.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\repos\StudentRecordproject\StudentRecordSystem\gui_version\Student.h" />
     <ClInclude Include="Mainform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
