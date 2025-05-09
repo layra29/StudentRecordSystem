@@ -1,7 +1,7 @@
 #include "Student.h"
 #include <iostream>
 #include <fstream>
-
+#include <sstream>
 using namespace std;
 
 StudentList::StudentList() {
@@ -22,40 +22,49 @@ void StudentList::addStudent() {
     cout << "Enter ID: ";
     cin >> newStudent->id;
     cin.ignore();
+
     cout << "Enter Name: ";
     getline(cin, newStudent->name);
+
     cout << "Enter GPA: ";
     cin >> newStudent->gpa;
     cin.ignore();
+
     cout << "Enter Major: ";
     getline(cin, newStudent->major);
+
     newStudent->next = head;
     head = newStudent;
 }
 
-void StudentList::displayStudents() {
+void StudentList::displayStudents() const {
+    if (!head) {
+        cout << "No students to display.\n";
+        return;
+    }
     Student* current = head;
     while (current != nullptr) {
-        cout << "\nID: " << current->id;
-        cout << "\nName: " << current->name;
-        cout << "\nGPA: " << current->gpa;
-        cout << "\nMajor: " << current->major << "\n";
+        cout << "\nID: " << current->id
+            << "\nName: " << current->name
+            << "\nGPA: " << current->gpa
+            << "\nMajor: " << current->major << "\n";
         current = current->next;
     }
 }
 
-void StudentList::searchByID() {
+void StudentList::searchByID() const {
     int targetID;
     cout << "Enter ID to search: ";
     cin >> targetID;
+
     Student* current = head;
     while (current != nullptr) {
         if (current->id == targetID) {
-            cout << "Found Student:\n";
-            cout << "ID: " << current->id << "\n";
-            cout << "Name: " << current->name << "\n";
-            cout << "GPA: " << current->gpa << "\n";
-            cout << "Major: " << current->major << "\n";
+            cout << "\nFound Student:\n"
+                << "ID: " << current->id << "\n"
+                << "Name: " << current->name << "\n"
+                << "GPA: " << current->gpa << "\n"
+                << "Major: " << current->major << "\n";
             return;
         }
         current = current->next;
@@ -63,11 +72,12 @@ void StudentList::searchByID() {
     cout << "Student not found.\n";
 }
 
-void StudentList::saveToFile() {
+void StudentList::saveToFile() const {
     ofstream file("students.txt");
     Student* current = head;
     while (current != nullptr) {
-        file << current->id << ',' << current->name << ',' << current->gpa << ',' << current->major << '\n';
+        file << current->id << ',' << current->name << ','
+            << current->gpa << ',' << current->major << '\n';
         current = current->next;
     }
     file.close();
@@ -80,22 +90,31 @@ void StudentList::loadFromFile() {
         cout << "No saved file found.\n";
         return;
     }
+
     string line;
     while (getline(file, line)) {
+        stringstream ss(line);
+        string idStr, name, gpaStr, major;
+
+        getline(ss, idStr, ',');
+        getline(ss, name, ',');
+        getline(ss, gpaStr, ',');
+        getline(ss, major);
+
         Student* newStudent = new Student;
-        size_t pos1 = line.find(',');
-        size_t pos2 = line.find(',', pos1 + 1);
-        size_t pos3 = line.find(',', pos2 + 1);
-        newStudent->id = stoi(line.substr(0, pos1));
-        newStudent->name = line.substr(pos1 + 1, pos2 - pos1 - 1);
-        newStudent->gpa = stof(line.substr(pos2 + 1, pos3 - pos2 - 1));
-        newStudent->major = line.substr(pos3 + 1);
+        newStudent->id = stoi(idStr);
+        newStudent->name = name;
+        newStudent->gpa = stof(gpaStr);
+        newStudent->major = major;
+
         newStudent->next = head;
         head = newStudent;
     }
+
     file.close();
     cout << "Data loaded from students.txt\n";
 }
+
 void StudentList::sortByGPA() {
     if (!head || !head->next) return;
 
@@ -117,5 +136,5 @@ void StudentList::sortByGPA() {
     } while (swapped);
 
     cout << "Student list sorted by GPA (descending).\n";
-    displayStudents(); // <--- This is the only line to ADD
+    displayStudents(); // Optional
 }

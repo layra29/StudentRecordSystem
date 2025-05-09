@@ -2,7 +2,6 @@
 #include "Student.h"
 using namespace std;
 
-// Function to display the main menu
 void displayMenu() {
     cout << "\nStudent Record Management System\n";
     cout << "1. Add Student\n";
@@ -22,7 +21,6 @@ int main() {
     do {
         displayMenu();
 
-        // Input validation
         if (!(cin >> choice)) {
             cout << "Invalid input. Please enter a number.\n";
             cin.clear();
@@ -30,35 +28,18 @@ int main() {
             continue;
         }
 
-        switch (choice) {
-        case 1:
-            list.addStudent();
-            break;
-        case 2:
-            list.displayStudents();
-            break;
-        case 3:
-            list.searchByID();
-            break;
-        case 4:
-            list.saveToFile();
-            break;
-        case 5:
-            list.loadFromFile();
-            break;
-        case 6:
-            list.sortByGPA();
-            cout << "Sorted list by GPA:\n";
-            list.displayStudents();
-            break;
-        case 0:
-            cout << "Exiting...\n";
-            break;
-        default:
-            cout << "Invalid choice! Please select a valid option.\n";
-        }
+        cin.ignore(); // Clear leftover newline
 
-        cin.ignore(); // clear newline from buffer
+        switch (choice) {
+        case 1: list.addStudent(); break;
+        case 2: list.displayStudents(); break;
+        case 3: list.searchByID(); break;
+        case 4: list.saveToFile(); break;
+        case 5: list.loadFromFile(); break;
+        case 6: list.sortByGPA(); break;
+        case 0: cout << "Exiting...\n"; break;
+        default: cout << "Invalid choice. Try again.\n";
+        }
 
     } while (choice != 0);
 
