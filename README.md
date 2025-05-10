@@ -54,6 +54,39 @@ Windows Forms GUI design
 - .vcxproj files – Visual Studio project settings
 ![gui](https://github.com/user-attachments/assets/24cf57d7-77cb-4a92-8daa-6abdd41d403b)
 ---
+## Testing and Test Cases
+
+### Console Version – Test Cases
+
+| Test Case       | Input                                   | Expected Output         | Actual Output           | Result |
+|-----------------|-----------------------------------------|--------------------------|--------------------------|--------|
+| Add Student     | ID: 101, Name: Alex, GPA: 3.5, Major: CS | Student added to list   | Student added            | Pass   |
+| Search by ID    | ID: 101                                 | Student: Alex displayed | Alex displayed           | Pass   |
+| Invalid GPA     | GPA: -1                                 | Show error / reject input| Error shown             | Pass   |
+| Load from file  | students.txt with valid data            | Load success            | Records loaded           | Pass   |
+
+---
+
+### GUI Version – Manual Testing Summary
+
+- *Add Student*: Fields correctly capture data and display it in the grid.  
+- *Search by ID*: Displays correct student when valid ID is entered.  
+- *Sort by GPA*: Students arranged properly in descending order.  
+- *Save/Load*: File operations completed without errors.  
+- *Edge Cases*: Empty fields, invalid GPA, or duplicate IDs are handled properly with appropriate messages or restrictions.
+
+---
+
+### Edge Case Handling
+
+The program was tested for edge cases such as:
+- Empty input fields  
+- Invalid numeric entries (e.g., GPA < 0 or > 4.0)  
+- Duplicate IDs  
+- Loading from a non-existent file  
+
+
+In all cases, the program handled errors gracefully without crashing.
 
 ## Author
 
