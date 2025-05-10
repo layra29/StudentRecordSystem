@@ -102,3 +102,8 @@ Store records in a database instead of a text file
 
 
 ---
+### Collaboration Note
+This project was completed in collaboration with Mohammad Nemer. All code and files were committed under one GitHub user (layra29) for simplicity, but work was divided as follows:
+
+Nistha Aryal: GUI development, README, and final report
+Mohammad Nemer: Console version logic, testing, and slide preparation
