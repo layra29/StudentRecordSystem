@@ -71,8 +71,6 @@ Windows Forms GUI design
 
 - *Add Student*: Fields correctly capture data and display it in the grid.  
 - *Search by ID*: Displays correct student when valid ID is entered.  
-- *Sort by GPA*: Students arranged properly in descending order.  
-- *Save/Load*: File operations completed without errors.  
 - *Edge Cases*: Empty fields, invalid GPA, or duplicate IDs are handled properly with appropriate messages or restrictions.
 
 ---
