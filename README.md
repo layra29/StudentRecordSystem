@@ -25,13 +25,14 @@ Windows Forms GUI design
 ## How to Compile and Run
 
 ### Console Version:
-1. Open the console_version folder in *Visual Studio*  
-2. Open the .sln file and *build the solution* (Ctrl + Shift + B)  
-3. Press F5 or click *Start* to run the console-based application
+1. Open the console_version folder in *Visual Studio*.
+2. Open the StudentRecordproject.vcxproj file.
+3. Press *F5* or click *Start* to build and run the console application.
 
 ### GUI Version:
-1. Open the gui_version folder in *Visual Studio*
-2. Launch the .sln file, build the project, and run the program to launch the Windows Forms application
+1. Open the gui_version folder in *Visual Studio*.
+2. Open the StudentRecordGUI_V2.vcxproj file.
+3. Press *F5* or click *Start* to build and run the GUI application.
 
 ---
 
